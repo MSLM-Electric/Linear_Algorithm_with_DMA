@@ -9,14 +9,14 @@
 //SomeBigFunction()
 //     |_____SomeFunction1()
 //                 |_____SomeFunction2()
-//				   		     |______Delay(100)
-//				   		     |______Delay(5)
+//                            |______Delay(100)
+//                            |______Delay(5)
 
 //SomeFunction3()
 //     |_____SomeFunction2()
-//	   |
-//	   + while(DMA_flag_wait!=0)
-//	   + while (...)
+//     |
+//     + while(DMA_flag_wait!=0)
+//     + while (...)
 
 //SomeFunction2()
 //     |_____SomeDelay(100)   //100ms  (For example: HAL_Delay(x))
