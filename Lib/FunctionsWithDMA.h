@@ -33,6 +33,30 @@
 //    < + while x5  //DMA flag wait operations 5 times
 //  exit
 
+//Status:
+//    FULLY_EXECUTED
+//         |  BUSY    CLOSE
+//         |   |      OPEN
+//         |   |        |
+//0   0    0   0   0    0
+//|   |            |
+//|   |          INITED or RUNNING
+//|   |          NOT_INITED
+//|  EXECUTED (_BAD)
+//|
+//FUNC_CALL
+
+#define FUNC_CALL 0x0020
+#define EXECUTED_BAD (uint16_t)0x0010
+#define FULLY_EXECUTED (uint16_t)0x0008
+//#define BUSY 0x04 not used yet
+#define INITED (uint16_t)0x0002
+#define NOT_INITED (uint16_t)(~INITED)
+#define RUNNING		INITED
+#define NOT_RUNNING		NOT_INITED
+#define OPEN (uint16_t)0x0001
+#define CLOSE (uint16_t)0xFFFE //(~OPEN)
+
 typedef struct {
 	uint8_t res;
 	uint16_t Status;
@@ -90,3 +114,16 @@ typedef struct
 
 	uint8_t RXBuffer;
 }SomeFunction2_PCB_t;
+
+typedef struct
+{
+	SomeBigFunctionState_t SomeBigFunctionState;
+	uint8_t* address;
+	int devAddress;
+	uint8_t dataSize;
+	uint8_t* getData;
+
+	//saving/saved variables for post-processing
+	uint8_t* ReadData;
+	uint8_t crc;
+}SomeBigFunction_PCB_t;
