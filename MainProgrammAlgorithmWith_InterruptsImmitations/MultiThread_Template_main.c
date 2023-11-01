@@ -13,6 +13,12 @@ uint16_t catchPoint = 0;
 /*DE*/ uint8_t MoreDetailsInShowing = 0;
 /*PA*/ uint8_t PauseConsoleCommand = 0;
 
+/*global vars*/
+/*FU1*/SomeFunction1State_t sepSomeFunction1State;
+/*FU2*/SomeFunction2State_t sepSomeFunction2State;
+/*BFU*/SomeBigFunctionState_t SomeBigFunctionState;
+/*FU3*/SomeFunction3State_t SomeFunction3State;
+
 enum {
 	INTERRUPT_CALLED = 1,
 	NOT_INTERRUPT_STATE = 2

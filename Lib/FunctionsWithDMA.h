@@ -127,3 +127,6 @@ typedef struct
 	uint8_t* ReadData;
 	uint8_t crc;
 }SomeBigFunction_PCB_t;
+
+
+uint16_t SetOpenAllDMAperformingFuncStates(void);
