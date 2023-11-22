@@ -130,3 +130,11 @@ typedef struct
 
 
 uint16_t SetOpenAllDMAperformingFuncStates(void);
+void InitDMAhandlerMechanism(void);
+void Pcallback(void);
+int CloseAllStates_Except(void* stateBlock);
+void OpenAllStates(void);
+uint16_t CallFromISR_SomeFunction1(void);
+uint16_t CallFromISR_SomeFunction2(void);
+uint16_t CallFromISR_SomeBigFunctionState(void);
+uint16_t CallFromISR_SomeFunction3State(void);
